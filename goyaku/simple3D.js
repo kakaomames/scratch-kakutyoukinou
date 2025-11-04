@@ -4024,7 +4024,7 @@ void main() {
     {
       opcode: "matSaveInto",
       blockType: BlockType.COMMAND,
-      text: "save into [DSTLIST] at [POS]",
+      text: "[DSTLIST] の [POS] に保存する",
       arguments: {
         DSTLIST: {
           type: ArgumentType.STRING,
@@ -4058,7 +4058,7 @@ void main() {
     {
       opcode: "matReset",
       blockType: BlockType.COMMAND,
-      text: "reset transformation's [COMPONENT]",
+      text: "変形の [COMPONENT]をリセットする",
       arguments: {
         COMPONENT: {
           type: ArgumentType.STRING,
@@ -4089,12 +4089,12 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Manual transformations",
+      text: "手動変換",
     },
     {
       opcode: "matTransform",
       blockType: BlockType.COMMAND,
-      text: "transform X: [X] Y: [Y] Z: [Z]",
+      text: "変形（トランスフォーム） X: [X] Y: [Y] Z: [Z]",
       arguments: {
         X: {
           type: ArgumentType.NUMBER,
@@ -4115,7 +4115,7 @@ void main() {
     {
       opcode: "matTransformFromTo",
       blockType: BlockType.COMMAND,
-      text: "transform X: [X] Y: [Y] Z: [Z] from [FROM] to [TO]",
+      text: "X: [X] Y: [Y] Z: [Z] の変形を [FROM] から [TO] に変換する",
       arguments: {
         X: {
           type: ArgumentType.NUMBER,
@@ -4192,7 +4192,7 @@ void main() {
     {
       opcode: "matTransformFromToDir",
       blockType: BlockType.COMMAND,
-      text: "transform direction X: [X] Y: [Y] Z: [Z] from [FROM] to [TO]",
+      text: "X: [X] Y: [Y] Z: [Z] の方向（ベクトル）を [FROM] から [TO] に変換する",
       arguments: {
         X: {
           type: ArgumentType.NUMBER,
@@ -4291,7 +4291,7 @@ void main() {
     {
       opcode: "renderToTexture",
       blockType: BlockType.COMMAND,
-      text: "render to texture of [NAME]",
+      text: "メッシュ [NAME] のテクスチャに描画する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -4309,7 +4309,7 @@ void main() {
     {
       opcode: "renderToCubeTexture",
       blockType: BlockType.COMMAND,
-      text: "render to cube texture [SIDE] of [NAME]",
+      text: "メッシュ [NAME] のキューブテクスチャ [SIDE] に描画する",
       arguments: {
         SIDE: {
           type: ArgumentType.STRING,
@@ -4340,7 +4340,7 @@ void main() {
     {
       opcode: "readRenderTarget",
       blockType: BlockType.COMMAND,
-      text: "read current render target into [DSTLIST]",
+      text: "現在の描画ターゲットをリスト [DSTLIST] に読み込む",
       arguments: {
         DSTLIST: {
           type: ArgumentType.STRING,
@@ -4365,7 +4365,7 @@ void main() {
     {
       opcode: "renderTargetInfo",
       blockType: BlockType.REPORTER,
-      text: "render target [PROPERTY]",
+      text: "描画ターゲットの [PROPERTY]",
       allowDropAnywhere: true,
       disableMonitor: true,
       arguments: {
@@ -4421,7 +4421,7 @@ void main() {
     {
       opcode: "setRenderTargetBox",
       blockType: BlockType.COMMAND,
-      text: "set [BOXTYPE] to X1:[X1] Y1:[Y1] X2:[X2] Y2:[Y2]",
+      text: " [BOXTYPE] を X1:[X1] Y1:[Y1] X2:[X2] Y2:[Y2] に設定する",
       arguments: {
         BOXTYPE: {
           type: ArgumentType.STRING,
@@ -4469,7 +4469,7 @@ void main() {
     {
       opcode: "clearRenderTargetBox",
       blockType: BlockType.COMMAND,
-      text: "clear [BOXTYPE]",
+      text: "クリア [BOXTYPE]",
       arguments: {
         BOXTYPE: {
           type: ArgumentType.STRING,
@@ -4492,12 +4492,12 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Tinting and fog",
+      text: "着色と霧",
     },
     {
       opcode: "setGlobalColor",
       blockType: BlockType.COMMAND,
-      text: "set global color [OPERATION] R: [RED] G: [GREEN] B: [BLUE] A: [ALPHA]",
+      text: "グローバルカラー[OPERATION] をR: [RED] G: [GREEN] B: [BLUE] A: [ALPHA]に設定する。",
       arguments: {
         OPERATION: {
           type: ArgumentType.STRING,
@@ -4534,7 +4534,7 @@ void main() {
     {
       opcode: "setFogEnabled",
       blockType: BlockType.COMMAND,
-      text: "turn fog [STATE]",
+      text: "霧を[STATE]にする",
       arguments: {
         STATE: {
           type: ArgumentType.STRING,
@@ -4548,7 +4548,7 @@ void main() {
     {
       opcode: "setFogColor",
       blockType: BlockType.COMMAND,
-      text: "set fog color R: [RED] G: [GREEN] B: [BLUE]",
+      text: "霧の色を R: [RED] G: [GREEN] B: [BLUE]に設定する。",
       arguments: {
         RED: {
           type: ArgumentType.NUMBER,
@@ -4574,7 +4574,7 @@ void main() {
     {
       opcode: "setFogDistance",
       blockType: BlockType.COMMAND,
-      text: "set fog distance near: [NEAR] far: [FAR]",
+      text: "霧の表示距離 near: [NEAR] far: [FAR]に設定する",
       arguments: {
         NEAR: {
           type: ArgumentType.NUMBER,
@@ -4594,7 +4594,7 @@ void main() {
     {
       opcode: "setFogPosition",
       blockType: BlockType.COMMAND,
-      text: "set fog [SPACE] origin at X: [X] Y: [Y] Z: [Z]",
+      text: "霧 [SPACE] の原点を X: [X] Y: [Y] Z: [Z]に設定する。",
       arguments: {
         SPACE: {
           type: ArgumentType.STRING,
@@ -4623,18 +4623,18 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Resolution changes",
+      text: "解像度の変更",
     },
     {
       opcode: "whenCanvasResized",
       blockType: BlockType.EVENT,
-      text: "when resolution changes",
+      text: "解像度が変わるとき",
       isEdgeActivated: false,
     },
     {
       opcode: "canvasWidth",
       blockType: BlockType.REPORTER,
-      text: "stage width",
+      text: "ステージ幅",
       def: function () {
         return canvas.width;
       },
@@ -4642,7 +4642,7 @@ void main() {
     {
       opcode: "canvasHeight",
       blockType: BlockType.REPORTER,
-      text: "stage height",
+      text: "ステージの高さ",
       def: function () {
         return canvas.height;
       },
