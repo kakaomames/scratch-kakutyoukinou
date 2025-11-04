@@ -3009,7 +3009,7 @@ void main() {
     {
       opcode: "drawMesh",
       blockType: BlockType.COMMAND,
-      text: "draw mesh [NAME]",
+      text: "メッシュ [NAME] を描画する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -3414,12 +3414,12 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Textures",
+      text: "テクスチャー",
     },
     {
       opcode: "textureFromUrl",
       blockType: BlockType.REPORTER,
-      text: "texture from URL [TEXURL]",
+      text: "テクスチャを URL [TEXURL] から作成する",
       arguments: {
         TEXURL: {
           type: ArgumentType.STRING,
@@ -3445,7 +3445,7 @@ void main() {
               }
               img.src = TEXURL;
               img.onload = function () {
-                // This takes time, so no imageSourceSync
+                // これには時間がかかるので、imageSourceSyncはありません
                 resolve({
                   width: img.width,
                   height: img.height,
@@ -3466,7 +3466,7 @@ void main() {
     {
       opcode: "textureFromCostume",
       blockType: BlockType.REPORTER,
-      text: "texture from costume [NAME]",
+      text: "テクスチャをコスチューム [NAME] から作成する",
       arguments: {
         NAME: {
           type: ArgumentType.COSTUME,
@@ -3503,7 +3503,7 @@ void main() {
     {
       opcode: "textureFromText",
       blockType: BlockType.REPORTER,
-      text: "texture from text [TEXT] font [FONT] color [COLOR]",
+      text: "テクスチャをテキスト [TEXT]、フォント [FONT]、色 [COLOR] から作成する",
       arguments: {
         TEXT: {
           type: ArgumentType.STRING,
@@ -3547,7 +3547,7 @@ void main() {
     {
       opcode: "textureFromTextWithBorder",
       blockType: BlockType.REPORTER,
-      text: "texture from text [TEXT] font [FONT] color [COLOR] border [BORDERSIZE] [BORDERCOLOR]",
+      text: "テクスチャをテキスト [TEXT]、フォント [FONT]、色 [COLOR]、境界線 [BORDERSIZE] [BORDERCOLOR] から作成する",
       arguments: {
         TEXT: {
           type: ArgumentType.STRING,
@@ -3619,7 +3619,7 @@ void main() {
     {
       opcode: "textureFromList",
       blockType: BlockType.REPORTER,
-      text: "texture from list [NAME] at [POS] of size [WIDTH] [HEIGHT]",
+      text: "リスト [NAME] の [POS] から サイズ [WIDTH] [HEIGHT] でテクスチャを作成する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -3691,7 +3691,7 @@ void main() {
     {
       opcode: "textureFromSize",
       blockType: BlockType.REPORTER,
-      text: "texture of size [WIDTH] [HEIGHT]",
+      text: "サイズ [WIDTH] [HEIGHT] のテクスチャを作成する",
       arguments: {
         WIDTH: {
           type: ArgumentType.NUMBER,
@@ -3735,7 +3735,7 @@ void main() {
     {
       opcode: "measureText",
       blockType: BlockType.COMMAND,
-      text: "measure text [TEXT] font [FONT]",
+      text: "テキスト [TEXT] のフォント [FONT] でのサイズを測定する",
       arguments: {
         PROP: {
           type: ArgumentType.STRING,
@@ -3763,7 +3763,7 @@ void main() {
     {
       opcode: "readMeasuredText",
       blockType: BlockType.REPORTER,
-      text: "measured [DIR] size",
+      text: "測定された [ DIR ] のサイズ",
       arguments: {
         DIR: {
           type: ArgumentType.STRING,
@@ -3789,7 +3789,7 @@ void main() {
     {
       opcode: "getFont",
       blockType: BlockType.REPORTER,
-      text: "font [FONT] of size [SIZE]",
+      text: "フォント [FONT] サイズ [SIZE]",
       arguments: {
         FONT: {
           type: ArgumentType.STRING,
@@ -3814,7 +3814,7 @@ void main() {
     {
       opcode: "matSelect",
       blockType: BlockType.COMMAND,
-      text: "configure [TRANSFORM] transformation",
+      text: "[TRANSFORM]変換を設定する",
       arguments: {
         TRANSFORM: {
           type: ArgumentType.STRING,
@@ -3830,7 +3830,7 @@ void main() {
     {
       opcode: "matStartWithPerspective",
       blockType: BlockType.COMMAND,
-      text: "start with perspective FOV: [FOV] near: [NEAR] far: [FAR]",
+      text: "透視投影（Perspective）で開始 FOV: [FOV] near: [NEAR] far: [FAR]",
       arguments: {
         FOV: {
           type: ArgumentType.NUMBER,
@@ -3857,7 +3857,7 @@ void main() {
     {
       opcode: "matStartWithOrthographic",
       blockType: BlockType.COMMAND,
-      text: "start with orthographic near: [NEAR] far: [FAR]",
+      text: "平行投影（Orthographic）で開始 near: [NEAR] far: [FAR]",
       arguments: {
         NEAR: {
           type: ArgumentType.NUMBER,
@@ -3879,7 +3879,7 @@ void main() {
     {
       opcode: "matStartWithIdentity",
       blockType: BlockType.COMMAND,
-      text: "start with no transformation",
+      text: "変換なしで始める",
       def: function () {
         transforms[selectedTransform] = m4.identity();
       },
@@ -3887,7 +3887,7 @@ void main() {
     {
       opcode: "matStartWithExternal",
       blockType: BlockType.COMMAND,
-      text: "start with [SOURCE]",
+      text: "[SOURCE] で開始する",
       arguments: {
         SOURCE: {
           type: ArgumentType.STRING,
@@ -3903,7 +3903,7 @@ void main() {
     {
       opcode: "matStartWithSavedIn",
       blockType: BlockType.COMMAND,
-      text: "start with saved in [SRCLIST] at [POS]",
+      text: "リスト [SRCLIST] の [POS] に保存された設定で開始する",
       arguments: {
         SRCLIST: {
           type: ArgumentType.STRING,
@@ -3932,7 +3932,7 @@ void main() {
     {
       opcode: "matMove",
       blockType: BlockType.COMMAND,
-      text: "move X: [X] Y: [Y] Z: [Z]",
+      text: "X: [X] Y: [Y] Z: [Z] だけ移動する",
       arguments: {
         X: {
           type: ArgumentType.NUMBER,
@@ -3956,7 +3956,7 @@ void main() {
     {
       opcode: "matRotate",
       blockType: BlockType.COMMAND,
-      text: "rotate around [AXIS] by [ANGLE] degrees",
+      text: "[AXIS] 軸を中心に [ANGLE] 度回転する",
       arguments: {
         AXIS: {
           type: ArgumentType.STRING,
@@ -4008,7 +4008,7 @@ void main() {
     {
       opcode: "matWrapper",
       blockType: BlockType.CONDITIONAL,
-      text: "wrapper",
+      text: "包装紙",
       def: function (_, util) {
         if (util.stackFrame.undoWrapper) {
           util.stackFrame.undoWrapper = false;
