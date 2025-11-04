@@ -1852,7 +1852,7 @@ void main() {
   const definitions = [
     {
       blockType: BlockType.BUTTON,
-      text: "Open extra resources",
+      text: "追加のリソースを開く",
       func: "openSite",
       def: function () {
         // Exempted from Scratch.openWindow as initiated by user gesture.
@@ -1863,7 +1863,7 @@ void main() {
     },
     {
       blockType: BlockType.BUTTON,
-      text: "Open sample project",
+      text: "オープンサンプルプロジェクト",
       func: "getSampleProject",
       def: function () {
         const url = new URL(location.href);
@@ -1879,12 +1879,12 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Clearing",
+      text: "清算",
     },
     {
       opcode: "resetEverything",
       blockType: BlockType.COMMAND,
-      text: "reset everything",
+      text: "すべてをリセットする",
       def: function () {
         resetEverything();
       },
@@ -1893,7 +1893,7 @@ void main() {
     {
       opcode: "clear",
       blockType: BlockType.COMMAND,
-      text: "clear [LAYERS]",
+      text: "クリア [LAYERS]",
       arguments: {
         LAYERS: {
           type: ArgumentType.STRING,
@@ -1920,7 +1920,7 @@ void main() {
     {
       opcode: "clearColor",
       blockType: BlockType.COMMAND,
-      text: "set clear color R: [RED] G: [GREEN] B: [BLUE] A: [ALPHA]",
+      text: "クリアカラーを設定する R: [RED] G: [GREEN] B: [BLUE] A: [ALPHA]",
       arguments: {
         RED: {
           type: ArgumentType.NUMBER,
@@ -1952,7 +1952,7 @@ void main() {
     {
       opcode: "depth",
       blockType: BlockType.COMMAND,
-      text: "depth test [TEST] write [WRITE]",
+      text: "深さテスト [TEST] 書き込む [WRITE]",
       arguments: {
         TEST: {
           type: ArgumentType.STRING,
@@ -1974,12 +1974,12 @@ void main() {
     },
     {
       blockType: BlockType.LABEL,
-      text: "Meshes",
+      text: "メッシュ",
     },
     {
       opcode: "allMeshes",
       blockType: BlockType.REPORTER,
-      text: "all meshes",
+      text: "すべてのメッシュ",
       disableMonitor: true,
       def: function () {
         return Array.from(meshes.keys()).join(",");
@@ -1988,7 +1988,7 @@ void main() {
     {
       opcode: "createMesh",
       blockType: BlockType.COMMAND,
-      text: "create mesh [NAME]",
+      text: "メッシュを作成する [NAME]",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2005,7 +2005,7 @@ void main() {
     {
       opcode: "deleteMesh",
       blockType: BlockType.COMMAND,
-      text: "delete mesh [NAME]",
+      text: "メッシュを削除する [NAME]",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2021,7 +2021,7 @@ void main() {
     {
       opcode: "inheritMeshes",
       blockType: BlockType.COMMAND,
-      text: "make [NAME] inherit from meshes [NAMES]",
+      text: "[NAME]をメッシュ[NAMES]から継承させる",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2055,7 +2055,7 @@ void main() {
     {
       opcode: "meshInfo",
       blockType: BlockType.REPORTER,
-      text: "mesh [NAME] [PROP]",
+      text: "メッシュ[NAME] [PROP]",
       allowDropAnywhere: true,
       arguments: {
         PROP: {
@@ -2079,7 +2079,7 @@ void main() {
     {
       opcode: "setMeshIndices",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] vertex indices [INDICES]",
+      text: "メッシュ [NAME] の頂点インデックスをリスト [INDICES] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2100,7 +2100,7 @@ void main() {
     {
       opcode: "setMeshPositionsXY",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] positions XY [X] [Y]",
+      text: "メッシュ [NAME] のポジションを XYリスト [X] [Y] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2128,7 +2128,7 @@ void main() {
     {
       opcode: "setMeshPositionsXYZ",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] positions XYZ [X] [Y] [Z]",
+      text: "メッシュ [NAME] のポジションを XYZリスト [X] [Y] [Z] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2156,7 +2156,7 @@ void main() {
     {
       opcode: "setMeshColorsRGB",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] colors RGB [R] [G] [B]",
+      text: "メッシュ [NAME] の色を RGBリスト [R] [G] [B] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2184,7 +2184,7 @@ void main() {
     {
       opcode: "setMeshColorsRGBA",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] colors RGBA [R] [G] [B] [A]",
+      text: " [NAME]の色を RGBAの[R] [G] [B] [A]にセットする",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2216,7 +2216,7 @@ void main() {
     {
       opcode: "setMeshTexCoordUV",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] texture coordinates UV [U] [V]",
+      text: "メッシュ [NAME] のテクスチャ座標を UVリスト [U] [V] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2241,7 +2241,7 @@ void main() {
     {
       opcode: "setMeshTexture",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] texture [TEXTURE] [WRAP] [FILTER]",
+      text: "メッシュ [NAME] のテクスチャ [TEXTURE] を WRAP: [WRAP] FILTER: [FILTER] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2298,7 +2298,7 @@ void main() {
     {
       opcode: "setMeshTexCoordUVW",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] cube texture coordinates UVW [U] [V] [W]",
+      text: "メッシュ [NAME] のキューブテクスチャ座標を UVWリスト [U] [V] [W] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2326,7 +2326,7 @@ void main() {
     {
       opcode: "setMeshCubeTexture",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] cube texture [SIDE] [TEXTURE] [WRAP] [FILTER]",
+      text: "メッシュ [NAME] のキューブテクスチャ [SIDE] を テクスチャ [TEXTURE] WRAP: [WRAP] FILTER: [FILTER] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2396,7 +2396,7 @@ void main() {
     {
       opcode: "setMeshTextureMipmap",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] texture mipmapping [MIPMAPPING]",
+      text: "メッシュ [NAME] のテクスチャ ミップマッピングを [MIPMAPPING] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2422,7 +2422,7 @@ void main() {
     {
       opcode: "setMeshTextureAnisotropy",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] texture anisotropic filtering [ANISOTROPY]",
+      text: "メッシュ [NAME] のテクスチャ 異方性フィルタリングを [ANISOTROPY] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2447,7 +2447,7 @@ void main() {
     {
       opcode: "setMeshWeights",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] bone indices [INDICES] weights [WEIGHTS] count per vertex [COUNT]",
+      text: "メッシュ [NAME] のボーンインデックスをリスト [INDICES]、ウェイトをリスト [WEIGHTS]、頂点ごとのカウントを [COUNT] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2491,7 +2491,7 @@ void main() {
     {
       opcode: "setMeshTransforms",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] [TRANSFORMS] transforms [MATRIXES]",
+      text: "メッシュ [NAME] の [トランスフォームタイプ] の行列をリスト [MATRIXES] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2558,7 +2558,7 @@ void main() {
     {
       opcode: "setMeshInterleaved",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] interleaved [PROPERTY] [SRCLIST]",
+      text: "メッシュ [NAME] のインターリーブ属性 [PROPERTY] をリスト [SRCLIST] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2614,7 +2614,7 @@ void main() {
     {
       opcode: "setMeshInstances",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] instance [PROPERTY] [SRCLIST]",
+      text: "メッシュ [NAME] のインスタンス属性 [PROPERTY] をリスト [SRCLIST] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2680,7 +2680,7 @@ void main() {
     {
       opcode: "setMeshUploadOffset",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] list update offset [OFFSET]",
+      text: "メッシュ [NAME] のリスト更新オフセットを [OFFSET] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2699,7 +2699,7 @@ void main() {
     },
     {
       opcode: "setBufferUsageHint",
-      text: "set [NAME] optimize next uploaded lists for being [USAGE] updated",
+      text: "メッシュ [NAME] の次にアップロードするリストの更新頻度を [USAGE] に最適化する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2722,7 +2722,7 @@ void main() {
     {
       opcode: "setMeshFromFile",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] from [FILETYPE] [SRCLIST]",
+      text: "メッシュ [NAME] のデータを [FILETYPE] 形式のリスト [SRCLIST] から設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2766,7 +2766,7 @@ void main() {
     {
       opcode: "setMeshPrimitives",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] primitives [PRIMITIVES]",
+      text: "メッシュ [NAME] のプリミティブを [PRIMITIVES] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2790,7 +2790,7 @@ void main() {
     {
       opcode: "setMeshBlending",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] blending [BLENDING]",
+      text: "メッシュ [NAME] のブレンドを [BLENDING] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2814,7 +2814,7 @@ void main() {
     {
       opcode: "setMeshCulling",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] cull [CULLING]",
+      text: "メッシュ [NAME] のカリングを [CULLING] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2837,7 +2837,7 @@ void main() {
     {
       opcode: "setMeshAlphaTest",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] discard pixels less opaque than [ALPHATEST], for those that pass [MAKEOPAQUE]",
+      text: "メッシュ [NAME] の透明度が [ALPHATEST] 未満のピクセルを破棄し、合格したものは [MAKEOPAQUE] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2866,7 +2866,7 @@ void main() {
     {
       opcode: "setMeshBillboarding",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] billboarding [BILLBOARDING]",
+      text: "メッシュ [NAME] のビルボーディングを [BILLBOARDING] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2888,7 +2888,7 @@ void main() {
     {
       opcode: "setMeshCentroidInterpolation",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] accurate interpolation [USECENTROID]",
+      text: "メッシュ [NAME] の正確な補間を [USECENTROID] に設定する",
       hideFromPalette: true,
       arguments: {
         NAME: {
@@ -2911,7 +2911,7 @@ void main() {
     {
       opcode: "setMeshMultiSampleInterpolation",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] compute color [MODE]",
+      text: "メッシュ [NAME] の計算色を [MODE] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2936,7 +2936,7 @@ void main() {
     {
       opcode: "setMeshDrawRange",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] vertex draw range from [START] to [END]",
+      text: "メッシュ [NAME] の頂点描画範囲を [START] から [END] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2963,7 +2963,7 @@ void main() {
     {
       opcode: "setMeshInstanceLimit",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] instance draw limit [END]",
+      text: "メッシュ [NAME] のインスタンス描画制限を [END] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
@@ -2986,7 +2986,7 @@ void main() {
     {
       opcode: "setMeshTexCoordOffsetUV",
       blockType: BlockType.COMMAND,
-      text: "set [NAME] texture coordinate offset UV [U] [V]",
+      text: "メッシュ [NAME] のテクスチャ座標オフセットを UVリスト [U] [V] に設定する",
       arguments: {
         NAME: {
           type: ArgumentType.STRING,
