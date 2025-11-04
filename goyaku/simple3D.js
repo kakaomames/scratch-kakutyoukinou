@@ -1,6 +1,6 @@
-// Name: Simple 3D
-// ID: xeltallivSimple3D
-// Description: Make GPU accelerated 3D projects easily.
+// Name: Simple 3D？
+// ID: xeltallivSimple3A
+// Description: GPUで加速された3Dプロジェクトを簡単に作成します。
 // By: Vadik1 <https://scratch.mit.edu/users/Vadik1/>
 // License: MPL-2.0 AND BSD-3-Clause
 // Version: 1.2.2
