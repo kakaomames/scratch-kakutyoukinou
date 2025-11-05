@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: scratch-api
+    env: python
+    # Pythonのバージョンを指定したい場合は runtime: python-3.11 などを追加
+    
+    # ビルド時に依存関係をインストール
+    buildCommand: "pip install -r requirements.txt"
+    
+    # サービス起動コマンド (app.pyファイル内のappインスタンスをGunicornで起動)
+    startCommand: "gunicorn app:app"
+    
+    # 無料プラン (開発・テスト向け)
+    plan: free
+    
+    # ポート設定 (Renderが自動で設定するため、この設定は不要ですが、環境変数として確認できます)
+    # envVars:
+    #   - key: PORT
+    #     value: "5000"
